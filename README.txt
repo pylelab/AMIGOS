@@ -6,10 +6,11 @@ https://pylelab.org/software
 Algorithmic Method for Identifying Groupings of Overall Structure
 (AMIGOS)
 By Carlos M Duarte, Copyright 1998, 1999, 2003
-Modified 08/30/03 by Leven Wadley & Carlos Duarte
+Modified 05/17/2021 by Chengxin Zhang
+Modified 08/30/2003 by Leven Wadley & Carlos Duarte
 	 (Modification listed @ end of file)
-Modified 03/08/99 (Modifications listed @ end of file)
-Modified 09/08/98
+Modified 03/08/1999 (Modifications listed @ end of file)
+Modified 09/08/1998
 
 AMIGOS is a perl script which outputs tables of torsion angles from 
 nucleic acid PDB files. Since it is a perl script it requires no compilation
@@ -137,6 +138,9 @@ Carlos Duarte	(cmd63@columbia.edu)
 a novel approach to conformational analysis, Journal of Molecular Biology,
 284(5):1465-78. 
 
+*** Modifications of 5/17/21 ***
+
+- Program modified to handle division of 0.
 
 *** Modifications of 8/30/03 ***
 
