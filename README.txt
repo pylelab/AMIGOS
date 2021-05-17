@@ -129,7 +129,8 @@ Carlos Duarte	(cmd63@columbia.edu)
 	This program was used in the following paper 
 
 	Duarte, C. & Pyle, A.M., Stepping through an RNA structure: a novel
-approach to conformational analysis, Journal of Molecular Biology, in press. 
+approach to conformational analysis, Journal of Molecular Biology,
+1998 Dec 18;284(5):1465-78. 
 
 
 *** Modifications of 8/30/03 ***
