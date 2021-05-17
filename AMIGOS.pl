@@ -8,6 +8,7 @@
 #
 $PDBSFX = ".pdb";
 $pi = atan2(1,1) * 4;
+$pseudocount = 1E-16; # a pseudo-count to avoid division of 0
 $PDBSPRD = "rna_sprd.txt";
 $PDBAREA = "rna_area.txt";
 open (ALLOUT, ">>all_sprd.txt")|| die "coupldn't open all_sprd.txt\n";
@@ -351,10 +352,16 @@ sub DIHED {
         $MNX = ($QY * $PZ) - ($QZ * $PY);
         $MNY = ($QZ * $PX) - ($QX * $PZ);
         $MNZ = ($QX * $PY) - ($QY * $PX);
-        $COS = (($LNX*$MNX)+($LNY*$MNY)+($LNZ*$MNZ))/((($LNX**2+$LNY**2+$LNZ**2)*($MNX**2+$MNY**2+$MNZ**2))**(1/2));
+        $den = (($LNX**2+$LNY**2+$LNZ**2)*($MNX**2+$MNY**2+$MNZ**2))**(1/2);
+	$den = $pseudocount if ($den<$pseudocount);
+        $COS = (($LNX*$MNX)+($LNY*$MNY)+($LNZ*$MNZ))/$den;
 	$SIN = (1 - ($COS**2))**(1/2);
-	$NUCOS = (($MNX*$RX)+($MNY*$RY)+($MNZ*$RZ))/((($MNX**2+$MNY**2+$MNZ**2)*($RX**2+$RY**2+$RZ**2))**(1/2));
-	$TOR = (atan2($SIN, $COS)*(180/$pi))*($NUCOS/(($NUCOS**2)**(1/2)));
+	$den = (($MNX**2+$MNY**2+$MNZ**2)*($RX**2+$RY**2+$RZ**2))**(1/2);
+	$den = $pseudocount if ($den<$pseudocount);
+	$NUCOS = (($MNX*$RX)+($MNY*$RY)+($MNZ*$RZ))/$den;
+	$den = ($NUCOS**2)**(1/2);
+	$den = $pseudocount if ($den<$pseudocount);
+	$TOR = (atan2($SIN, $COS)*(180/$pi))*($NUCOS/$den);
 	if ($TOR < 0){
 		$TOR = 360 + $TOR
 		}
