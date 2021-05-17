@@ -1,3 +1,8 @@
+A newer version of this program, AMIGOS II, is now available at
+https://pylelab.org/software
+
+-------------------------------------------------------------------------------
+
 Algorithmic Method for Identifying Groupings of Overall Structure
 (AMIGOS)
 By Carlos M Duarte, Copyright 1998, 1999, 2003
