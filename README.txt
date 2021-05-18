@@ -8,9 +8,9 @@ Algorithmic Method for Identifying Groupings of Overall Structure
 By Carlos M Duarte, Copyright 1998, 1999, 2003
 Modified 05/17/2021 by Chengxin Zhang
 Modified 08/30/2003 by Leven Wadley & Carlos Duarte
-	 (Modification listed @ end of file)
-Modified 03/08/1999 (Modifications listed @ end of file)
-Modified 09/08/1998
+Modified 03/08/1999 by Carlos Duarte
+Modified 09/08/1998 by Carlos Duarte
+(Modification listed @ end of file)
 
 AMIGOS is a perl script which outputs tables of torsion angles from 
 nucleic acid PDB files. Since it is a perl script it requires no compilation
@@ -140,7 +140,7 @@ a novel approach to conformational analysis, Journal of Molecular Biology,
 
 *** Modifications of 5/17/21 ***
 
-- Program modified to handle division of 0.
+- Program no longer abort for pdb with overlapping atoms.
 
 *** Modifications of 8/30/03 ***
 
